@@ -25,6 +25,7 @@ public class Main0305 {
             System.out.println("変更します");
             break;
         default:
+            break;
         }
     }
 
