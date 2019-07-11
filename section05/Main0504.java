@@ -7,7 +7,6 @@ package section05;
 public class Main0504 {
 
     public static void main(String[] args) {
-        // TODO 自動生成されたメソッド・スタブ
         double bottom = 10.0;
         double height = 5.0;
         double radius = 5.0;
