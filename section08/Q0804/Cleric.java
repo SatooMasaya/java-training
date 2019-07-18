@@ -21,6 +21,16 @@ public class Cleric {
     }
 
     /**
+     * セルフエイドメソッド HPを回復する
+     */
+    public void selfAid() {
+        if (this.mp >= 5) {
+            this.mp -= 5;
+            this.hp = MAXHP;
+        }
+    }
+    
+    /**
      * 祈りメソッド MPを回復する。
      * 
      * @param praySecond 祈った秒数
