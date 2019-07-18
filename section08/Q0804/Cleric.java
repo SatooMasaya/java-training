@@ -13,13 +13,6 @@ public class Cleric {
     final int MAXHP = 50;
     final int MAXMP = 10;
 
-    public void selfAid() {
-        if (this.mp >= 5) {
-            this.mp -= 5;
-            this.hp = MAXHP;
-        }
-    }
-
     /**
      * セルフエイドメソッド HPを回復する
      */
@@ -29,7 +22,7 @@ public class Cleric {
             this.hp = MAXHP;
         }
     }
-    
+
     /**
      * 祈りメソッド MPを回復する。
      * 
