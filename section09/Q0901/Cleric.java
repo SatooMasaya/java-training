@@ -6,8 +6,8 @@ public class Cleric {
     String name;
     int hp = 50;
     int mp = 10;
-    static final int MAXHP = 50;
-    static final int MAXMP = 10;
+    static final int MAX_HP = 50;
+    static final int MAX_MP = 10;
 
     Cleric(String name, int hp, int mp) {
         this.name = name;
@@ -16,15 +16,11 @@ public class Cleric {
     }
 
     Cleric(String name, int hp) {
-        this(name, hp, MAXMP);
+        this(name, hp, MAX_MP);
     }
 
     Cleric(String name) {
-        this(name, MAXHP, MAXMP);
-    }
-
-    Cleric() {
-        this("聖職者ダミー", 0, 0);
+        this(name, MAX_HP, MAX_MP);
     }
 
     /**
@@ -33,7 +29,7 @@ public class Cleric {
     public void selfAid() {
         if (this.mp >= 5) {
             this.mp -= 5;
-            this.hp = MAXHP;
+            this.hp = MAX_HP;
         }
     }
 
@@ -47,13 +43,15 @@ public class Cleric {
         int recoveryAmount; // 回復量を代入する変数
         recoveryAmount = praySecond + new Random().nextInt(3);
 
-        if (this.mp + recoveryAmount <= MAXMP) { // 回復量が最大MPを超えない場合、そのまま回復量を返す
+        if (this.mp + recoveryAmount <= MAX_MP) { // 回復量が最大MPを超えない場合、そのまま回復量を返す
             this.mp += recoveryAmount;
-            return recoveryAmount;
+
         } else { // 回復量が最大MPを超えた場合、実際の回復量を求めて、返す
-            this.mp = MAXMP;
-            recoveryAmount = MAXMP - this.mp;
-            return recoveryAmount;
+            this.mp = MAX_MP;
+            recoveryAmount = MAX_MP - this.mp;
         }
+
+        return recoveryAmount;
+
     }
 }
