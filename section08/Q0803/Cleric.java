@@ -8,8 +8,8 @@ public class Cleric {
     String name;
     int hp = 50;
     int mp = 10;
-    final int MAXHP = 50;
-    final int MAXMP = 10;
+    final int MAX_HP = 50;
+    final int MAX_MP = 10;
 
     /**
      * セルフエイドメソッド HPを回復する
@@ -17,7 +17,7 @@ public class Cleric {
     public void selfAid() {
         if (this.mp >= 5) {
             this.mp -= 5;
-            this.hp = MAXHP;
+            this.hp = MAX_HP;
         }
     }
 }
